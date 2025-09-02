@@ -1,4 +1,4 @@
-package top.guxx.mapper.csdn;
+package top.guxx.domain.csdn.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

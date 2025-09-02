@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import top.guxx.domain.database.service.DataBaseMCPService;
+import top.guxx.infrastructure.gateway.CSDNServiceClient;
+import top.guxx.infrastructure.gateway.ICSDNService;
 
 
 @Slf4j
@@ -20,6 +22,11 @@ public class Application implements CommandLineRunner {
     @Bean
     public ToolCallbackProvider computerTools(DataBaseMCPService dataBaseMCPService) {
         return MethodToolCallbackProvider.builder().toolObjects(dataBaseMCPService).build();
+    }
+
+    @Bean
+    public ICSDNService icsdnService() {
+        return CSDNServiceClient.createService();
     }
 
     @Override
