@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: mcp-server-database
+
+  ai:
+    mcp:
+      server:
+        name: ${spring.application.name}
+        version: 1.0.0
+
+  main:
+    banner-mode: off
+    web-application-type: none
+
+  # 数据源配置
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:15432/ai-rag-knowledge
+    type: com.zaxxer.hikari.HikariDataSource
+
+    # HikariCP 连接池配置（推荐）
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: HikariPool-PostgreSQL
+
+logging:
+  pattern:
+    console:
+  file:
+    name: ${spring.application.name}.log
+
+# MyBatis 配置
+mybatis:
+  # mapper.xml 文件位置
+  mapper-locations: classpath:mappers/*.xml
+  # 实体类别名包路径
+  # 配置映射器
+  configuration:
+    map-underscore-to-camel-case: true  # 自动将下划线命名转换为驼峰命名
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
