@@ -6,6 +6,7 @@ import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 import top.guxx.domain.database.model.DataBaseMcpRequest;
 import top.guxx.domain.database.model.DataBaseMcpResp;
+import top.guxx.infrastructure.dao.UserInfoMapper;
 
 import java.util.List;
 

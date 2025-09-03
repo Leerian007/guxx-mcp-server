@@ -5,8 +5,9 @@ import retrofit2.http.Body;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import top.guxx.domain.csdn.model.ArticleFunctionRequest;
 import top.guxx.infrastructure.gateway.dto.SaveArticleRequest;
-import top.guxx.infrastructure.gateway.dto.SaveArticleResponse;
+import top.guxx.infrastructure.gateway.dto.ArticleResponse;
 
 public interface ICSDNService {
     
@@ -31,7 +32,7 @@ public interface ICSDNService {
         "x-ca-signature: I1z2XgTgYqo839qPZYINgKRHWp3v7XlHO8QbmLDKMDA=",
         "x-ca-signature-headers: x-ca-key,x-ca-nonce"
     })
-    Call<SaveArticleResponse> saveArticle(
+    Call<ArticleResponse> saveArticle(
         @Header("Cookie") String cookie,
         @Body SaveArticleRequest request
     );

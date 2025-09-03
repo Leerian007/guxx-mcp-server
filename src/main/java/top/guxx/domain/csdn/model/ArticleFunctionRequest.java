@@ -28,4 +28,35 @@ public class ArticleFunctionRequest {
         return MarkdownConverter.convertToHtml(markdowncontent);
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public String getMarkdowncontent() {
+        return markdowncontent;
+    }
+
+    public void setMarkdowncontent(String markdowncontent) {
+        this.markdowncontent = markdowncontent;
+    }
 }
